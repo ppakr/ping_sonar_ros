@@ -23,10 +23,10 @@ The source code is released under a [MIT license](LICENSE).
 Clone with `--recursive` in order to get the necessary `ping-python` library:
 
 ```
-cd [your_ws]/src
+cd path/to/your_ws
 git clone -b master --recursive https://github.com/ppakr/ping_sonar_ros.git
-cd path/to/[your_ws]/src/ping_sonar_ros/ping_sonar_ros/ping-python && python3 setup.py install --user
-cd path/to/[your_ws]
+cd path/to/your_ws/src/ping_sonar_ros/ping_sonar_ros/ping-python && python3 setup.py install --user
+cd path/to/your_ws
 colcon build --packages-select ping_sonar_ros
 ```
 
