@@ -23,6 +23,10 @@ def generate_launch_description():
     )
 
     ping1d_node = Node(
+<<<<<<< HEAD
+=======
+    	namespace='bluerov2',
+>>>>>>> bd30257 (update from pool test)
         package='ping_sonar_ros',
         executable='ping1d_node',
         output="screen",
