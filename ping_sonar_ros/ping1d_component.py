@@ -29,7 +29,7 @@ from std_msgs.msg import Float64MultiArray
 
 from rcl_interfaces.msg import SetParametersResult
 
-from brping import Ping1D
+# from brping import Ping1D
 import importlib
 module_name = "ping_sonar_ros.ping-python.brping.ping1d"
 module = importlib.import_module(module_name)
@@ -51,7 +51,7 @@ class Ping1dComponent(Node):
     self.speed_:float = self.get_parameter('speed').value
     self.declare_parameter('interval_num', 66)
     self.interval_num_:float = self.get_parameter('interval_num').value
-    self.declare_parameter('gain_num', 1) # int 0 - 6
+    self.declare_parameter('gain_num', 0) # int 0 - 6
     self.gain_num_:int = self.get_parameter('gain_num').value
     self.declare_parameter('scan_start', 0) # default 100 [mm] range(30 to 200)
     self.scan_start_:float = self.get_parameter('scan_start').value
@@ -67,16 +67,6 @@ class Ping1dComponent(Node):
     #3_gainIndex: 0 or 1
     #3_lengthDistance: 5000
     #3_startDistance: 0
-
-  #   PingConfiguration {
-	# 1_pingInterval: 66
-	# 1_speedOfSound: 1500000
-	# 2_automaticMode: 1
-	# 3_gainIndex: 1
-	# 3_lengthDistance: 3994
-	# 3_startDistance: 0
-# }
-
 
     self.param_handler_ptr_ = self.add_on_set_parameters_callback(self.set_param_callback)
 
